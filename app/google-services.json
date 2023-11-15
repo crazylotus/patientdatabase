@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364774805725",
+    "project_id": "patient-details-ef933",
+    "storage_bucket": "patient-details-ef933.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364774805725:android:2af997125e00c737ac8b34",
+        "android_client_info": {
+          "package_name": "com.loki.patientdetails"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZF0GWk5-Y7I_c33h5kqB8DNuy8XPVjYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
