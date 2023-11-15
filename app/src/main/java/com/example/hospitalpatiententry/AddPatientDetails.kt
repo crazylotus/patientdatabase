@@ -1,12 +1,11 @@
 package com.example.hospitalpatiententry
 
-import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
-
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -20,7 +19,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
 import kotlinx.coroutines.runBlocking
-import java.util.Locale
 
 
 class AddPatientDetails : AppCompatActivity(), OnMapReadyCallback {
@@ -57,9 +55,11 @@ class AddPatientDetails : AppCompatActivity(), OnMapReadyCallback {
 
         binding.radioMale.setOnClickListener {
             gender = "Male"
+            closeKeyBoard()
         }
         binding.radioFemale.setOnClickListener {
             gender = "Female"
+            closeKeyBoard()
         }
 
         binding.btnRegister.setOnClickListener {
@@ -99,12 +99,14 @@ class AddPatientDetails : AppCompatActivity(), OnMapReadyCallback {
             //patient date insert function
             mPatientViewModel.addUser(data)
             Toast.makeText(this, "Successfully added!", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
+           onBackPressed()
         }
+
+
 
         binding.btnLocation.setOnClickListener {
             binding.map.visibility = View.VISIBLE
+            closeKeyBoard()
         }
 
         binding.close.setOnClickListener {
@@ -117,6 +119,14 @@ class AddPatientDetails : AppCompatActivity(), OnMapReadyCallback {
             binding.map.visibility = View.GONE
         }
 
+    }
+
+    private fun closeKeyBoard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 
     //Generate the Unique id

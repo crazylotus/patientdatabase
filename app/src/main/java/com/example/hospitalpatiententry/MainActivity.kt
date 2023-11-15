@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity(),MainAdapter.OnItemClickListerner, OnMap
 
         var layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
 
-        binding.rvCategorylist.layoutManager = layoutManager
-        binding.rvCategorylist.adapter = adapter
-        binding.rvCategorylist.setHasFixedSize(true)
+        binding.rvPatient.layoutManager = layoutManager
+        binding.rvPatient.adapter = adapter
+        binding.rvPatient.setHasFixedSize(true)
         mPatientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
         mPatientViewModel.readAllData.observe(this, Observer { user ->
 

@@ -46,7 +46,7 @@ class MainAdapter(context : Context,listener : OnItemClickListerner) : RecyclerV
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val patient = patientList[position]
-        holder.binding.textViewName.text = "Name : "+patient.name
+        holder.binding.textViewName.text = "Name : "+patient.name.capitalize()
         holder.binding.textViewPatientId.text = "Id : "+patient.patientId.toString()
         holder.binding.textViewGender.text = "Gender : "+patient.gender
         holder.binding.textViewAge.text = "Age : "+patient.age.toString()
