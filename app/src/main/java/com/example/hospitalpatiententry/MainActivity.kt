@@ -74,6 +74,8 @@ class MainActivity : AppCompatActivity(),MainAdapter.OnItemClickListerner, OnMap
 
         binding.close.setOnClickListener {
             binding.map.visibility=View.GONE
+            latitude =0.0
+            longitude =0.0
             val latLong: LatLng
             latLong = LatLng(latitude, longitude)
             val cameraPosition = CameraPosition.Builder()

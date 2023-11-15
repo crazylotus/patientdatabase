@@ -12,27 +12,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/tv_profile"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:gravity="center"
-            android:src="@drawable/man"
-            android:layout_margin="10dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:src="@drawable/man" />
+
         <TextView
             android:id="@+id/textViewMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_profile"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/select_item"
+            android:padding="10dp"
             android:text="view map"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_margin="20dp"
-            android:padding="10dp"
-            android:layout_below="@+id/tv_profile"
-            android:background="@drawable/select_item"/>
+            android:textStyle="bold" />
 
         <!-- res/layout/item_patient.xml -->
         <LinearLayout
